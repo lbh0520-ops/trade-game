@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <!-- Timer Module Added -->
+            <!-- Timer Module -->
             <div class="hidden md:flex items-center bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-xl space-x-3">
                 <div class="flex items-center space-x-1 text-amber-400 font-mono text-lg font-extrabold tracking-wider" id="timerDisplay">
                     <i class="fa-solid fa-stopwatch text-sm mr-1"></i>00:00
@@ -238,7 +238,7 @@
                     </div>
                 </div>
 
-                <!-- 3. 보낼 자원 선택 -->
+                <!-- 3. 거래 자원 종류 선택 -->
                 <div>
                     <label class="block text-xs font-extrabold text-slate-800 mb-2 flex items-center gap-1.5">
                         <span class="w-5 h-5 bg-amber-500 text-white rounded-full inline-flex items-center justify-center text-[10px]">3</span>
@@ -641,7 +641,7 @@
 
         // Render Visual Button UI for Trade Modal
         function renderTradeModalButtons() {
-            // Render From Country Buttons
+            // Render From Country Buttons (수출국)
             const fromContainer = document.getElementById('fromCountryContainer');
             fromContainer.innerHTML = state.countries.map(c => {
                 const isSelected = selectedFromId === c.id;
@@ -657,7 +657,7 @@
                 `;
             }).join('');
 
-            // Render To Country Buttons
+            // Render To Country Buttons (수입국)
             const toContainer = document.getElementById('toCountryContainer');
             toContainer.innerHTML = state.countries.map(c => {
                 const isSelected = selectedToId === c.id;
@@ -674,7 +674,7 @@
                 `;
             }).join('');
 
-            // Render Resource Selection Buttons
+            // Render Resource Selection Buttons (거래 자원 종류)
             const resContainer = document.getElementById('resourceContainer');
             const resourcesKey = ['money', 'oil', 'iron', 'gold', 'wood', 'labor'];
             resContainer.innerHTML = resourcesKey.map(res => {
